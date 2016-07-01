@@ -70,11 +70,11 @@
     NSArray *carArr = @[@"京", @"津", @"渝", @"沪", @"冀", @"晋", @"辽", @"吉", @"黑", @"苏", @"浙", @"皖", @"闽", @"赣", @"鲁", @"豫", @"鄂", @"湘", @"粤", @"琼", @"川", @"贵", @"云", @"陕", @"甘", @"青", @"蒙", @"桂", @"宁", @"新", @"藏", @"台", @"港", @"澳"];
     
     
-    CGFloat kBtnWidth =(kWidth-45)/8;
+    CGFloat kBtnWidth =(kWidth-40)/7;
     CGFloat kMargin  = 5;
     
     
-    _carView =[[UIView alloc]initWithFrame:CGRectMake(0, kHeight-(kMargin+carArr.count/8*(kBtnWidth+kMargin)), kWidth, (kMargin+carArr.count/8*(kBtnWidth+kMargin)))];
+    _carView =[[UIView alloc]initWithFrame:CGRectMake(0, kHeight-(kMargin+5*(kBtnWidth+kMargin)), kWidth, (kMargin+5*(kBtnWidth+kMargin)))];
     _carView.backgroundColor =[UIColor lightGrayColor];
     [_bgView addSubview:_carView];
 
@@ -86,7 +86,7 @@
     
     for (NSInteger i=0; i<carArr.count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(kMargin+i%8*(kBtnWidth+kMargin), kMargin+i/8*(kBtnWidth+kMargin),kBtnWidth , kBtnWidth);
+        btn.frame = CGRectMake(kMargin+i%7*(kBtnWidth+kMargin), kMargin+i/7*(kBtnWidth+kMargin),kBtnWidth , kBtnWidth);
         [btn setTitle:carArr[i] forState:UIControlStateNormal];
         btn.tag = 100+i;
         [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
